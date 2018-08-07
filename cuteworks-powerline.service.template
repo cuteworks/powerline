@@ -1,0 +1,11 @@
+[Unit]
+Description=Web service to invoke system commands
+Requires=network.target
+
+[Service]
+Type=simple
+ExecStart={path}/powerline.sh
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
