@@ -43,7 +43,7 @@ sudo ./setup.sh
 
 ## Configure
 
-[] Todo
+[ ] Todo
 
 ## Debug
 powerline logs to the systemd journal. To view the log use `journalctl -u cuteworks-powerline`
