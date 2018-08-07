@@ -32,22 +32,18 @@ pip3 install systemd
 
 ```
 chmod +x powerline.sh setup.sh
-./setup.sh
+sudo ./setup.sh
 ```
 
 
 ### What does `setup.sh` do?
-* Sets up a systemd unit file for powerline as `cuteworks-powerline.service`
-* Creates a symlink in `/etc/systemd/system/` named `cuteworks-powerline.service` pointing to this unit file
-  * So, if you ever move the directory you cloned powerline into, you'll want to run `setup.sh` again
+* Sets up a systemd unit file for powerline as `cuteworks-powerline.service` in `/etc/systemd/system/` referencing the `powerline.sh` script
+  * If you ever move the directory you cloned powerline into, you'll want to run `setup.sh` again
 * Enables the powerline service to start automatically and starts powerline for the first time
 
-#### Optional - Set up WSGI Application
-
- 
-
-
-
-
-
 ## Configure
+
+[] Todo
+
+## Debug
+powerline logs to the systemd journal. To view the log use `journalctl -u cuteworks-powerline`
