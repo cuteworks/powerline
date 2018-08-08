@@ -58,7 +58,7 @@ for p in homedirs:
     if not os.path.exists(p + "/" + STEP_FILE_NAME):
         logger.debug("  no step file in " + p)
         continue
-    logger.debug("  found step file in " + p)
+    logger.debug("  step file in " + p)
 
     with open(p + "/" + STEP_FILE_NAME) as f:
         for line in f:
@@ -73,7 +73,7 @@ for p in homedirs:
                 continue
 
             if not os.path.exists(script):
-                logger.debug("    script does not exist or is unreadable, skipping this line: " + line)
+                logger.debug("    script does not exist or is unreadable, skipping this script: " + script)
                 continue
 
             logger.debug("    mapping endpoint: /" + endpoint + " -> " + script)
