@@ -1,8 +1,9 @@
 import os
+import subprocess
 import logging
 import getpass
 
-from flask import Flask
+from flask import Flask, request
 from systemd.journal import JournaldLogHandler
 
 
@@ -40,6 +41,19 @@ def splash():
     return "Hello world, powerline running as " + getpass.getuser() + " and has served " + str(request_count) +\
            " requests this session"
 
+def route_handler():
+    endpoint = request.url_rule.rule
+    logger.debug("handling request for route: " + endpoint)
+    if endpoint not in endpoint_map:
+        logger.debug("endpoint not mapped: " + endpoint)
+        abort(500)
+
+    script = endpoint_map[endpoint]
+    logger.debug("executing: " + endpoint + " -> " + script)
+
+    # Assumption: file exists (checked during load). Could probably check whether executable, etc.
+    subprocess.call([script])
+    return "ok"
 
 # ##############
 # Set up logging
@@ -71,11 +85,14 @@ for p in homedirs:
     with open(p + "/" + STEP_FILE_NAME) as f:
         for line in f:
             split = line.rstrip().split(":")
+
             if len(split) != 2:
                 logger.debug("    invalid format, skipping this line: " + line)
                 continue
+
             endpoint = split[0]
             script = split[1]
+
             if endpoint in endpoint_map:
                 logger.debug("    skipping endpoint /" + endpoint + ", already mapped to " + endpoint_map[endpoint])
                 continue
@@ -86,13 +103,8 @@ for p in homedirs:
 
             logger.debug("    mapping endpoint: /" + endpoint + " -> " + script)
             endpoint_map[endpoint] = script
+            app.add_url_rule(endpoint, endpoint, route_handler)
 
-
-# #########################
-# Set up endpoints in Flask
-# #########################
-
-# TODO
 
 # ##################
 # Launch application
