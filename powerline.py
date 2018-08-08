@@ -53,7 +53,7 @@ def route_handler():
 
     # Assumption: file exists (checked during load). Could probably check whether executable, etc.
     subprocess.call([script])
-    return "ok"
+    return "Ok"
 
 # ##############
 # Set up logging
