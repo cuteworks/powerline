@@ -52,7 +52,7 @@ logger.setLevel(logging.DEBUG)
 
 logger.debug("traversing home directories and parsing step files")
 
-homedirs = [f.path in os.scandir(HOMEDIR) if (f.is_dir() and f.name != "lost+found")]
+homedirs = [f.path for f in os.scandir(HOMEDIR) if (f.is_dir() and f.name != "lost+found")]
 
 for p in homedirs:
     if not os.path.exists(p + "/" + STEP_FILE_NAME):
