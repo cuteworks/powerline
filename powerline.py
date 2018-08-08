@@ -103,7 +103,7 @@ for p in homedirs:
 
             logger.debug("    mapping endpoint: /" + endpoint + " -> " + script)
             endpoint_map[endpoint] = script
-            app.add_url_rule(endpoint, endpoint, route_handler)
+            app.add_url_rule("/" + endpoint, endpoint, route_handler)
 
 
 # ##################
