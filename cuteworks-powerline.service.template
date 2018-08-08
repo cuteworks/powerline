@@ -6,6 +6,7 @@ Requires=network.target
 Type=simple
 ExecStart={path}/powerline.sh
 Restart=on-abort
+User=cuteworks
 
 [Install]
 WantedBy=multi-user.target

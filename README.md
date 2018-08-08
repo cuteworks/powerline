@@ -40,6 +40,7 @@ sudo ./setup.sh
 * Sets up a systemd unit file for powerline as `cuteworks-powerline.service` in `/etc/systemd/system/` referencing the `powerline.sh` script
   * If you ever move the directory you cloned powerline into, you'll want to run `setup.sh` again
 * Enables the powerline service to start automatically and starts powerline for the first time
+* Creates a user `cuteworks` to host the service
 
 ## Configure
 
@@ -47,7 +48,3 @@ sudo ./setup.sh
 
 ## Debug
 powerline logs to the systemd journal. To view the log use `journalctl -u cuteworks-powerline`
-
-
-## Todo
-- [ ] Start service as a user other than root

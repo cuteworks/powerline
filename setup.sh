@@ -11,6 +11,9 @@ systemctl stop cuteworks-powerline
 systemctl disable cuteworks-powerline
 rm -f /etc/systemd/system/cuteworks-powerline.service
 
+# Create user
+useradd -M cuteworks
+
 # Set up unit file
 cp cuteworks-powerline.service.template cuteworks-powerline.service
 cuteworks_powerline_home="$(pwd | sed -e 's/[\/&]/\\&/g')"
