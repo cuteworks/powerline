@@ -109,5 +109,7 @@ powerline logs to the systemd journal. To view the log use `journalctl -u cutewo
 ## Contributors
 
 ### Alex Kersten ([@akersten](https://github.com/akersten))
-![Avatar](web/static/img/ak-t.png)
 *professional critic*
+
+
+![Avatar](web/static/img/ak-t.png)
