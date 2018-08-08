@@ -62,7 +62,7 @@ for p in homedirs:
 
     with open(p + "/" + STEP_FILE_NAME) as f:
         for line in f:
-            split = line.split(":")
+            split = line.rstrip().split(":")
             if len(split) != 2:
                 logger.debug("    invalid format, skipping this line: " + line)
                 continue
