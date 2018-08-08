@@ -112,4 +112,4 @@ powerline logs to the systemd journal. To view the log use `journalctl -u cutewo
 *professional critic*
 
 
-![Avatar](web/static/img/ak-t.png)
+![Avatar](static/img/ak-t.png)
