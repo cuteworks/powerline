@@ -33,6 +33,14 @@ def before_request():
     request_count = request_count + 1
 
 
+@app.route('/')
+def splash():
+    logger.debug("serving splash endpoint")
+
+    return "Hello world, powerline running as " + getpass.getuser() + " and has served " + str(request_count) +\
+           " requests this session"
+
+
 # ##############
 # Set up logging
 # ##############
@@ -79,15 +87,17 @@ for p in homedirs:
             logger.debug("    mapping endpoint: /" + endpoint + " -> " + script)
             endpoint_map[endpoint] = script
 
+
+# #########################
+# Set up endpoints in Flask
+# #########################
+
+# TODO
+
+# ##################
+# Launch application
+# ##################
+
 logger.debug("ready")
-
-@app.route('/')
-def splash():
-    logger.debug("Served splash endpoint.")
-
-    return "Hello world, powerline running as " + getpass.getuser() + " and has served " + str(request_count) +\
-           " requests this session"
-
-
 if __name__ == '__main__':
     app.run(port=22026, host="0.0.0.0")
