@@ -47,3 +47,7 @@ sudo ./setup.sh
 
 ## Debug
 powerline logs to the systemd journal. To view the log use `journalctl -u cuteworks-powerline`
+
+
+## Todo
+- [ ] Start service as a user other than root

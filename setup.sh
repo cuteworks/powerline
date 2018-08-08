@@ -7,6 +7,8 @@ if ! [ $(id -u) = 0 ]; then
 fi
 
 # Remove existing service
+systemctl stop cuteworks-powerline
+systemctl disable cuteworks-powerline
 rm -f /etc/systemd/system/cuteworks-powerline.service
 
 # Set up unit file
