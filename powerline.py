@@ -3,7 +3,7 @@ import subprocess
 import logging
 import getpass
 
-from flask import Flask, request
+from flask import Flask, request, abort
 from systemd.journal import JournaldLogHandler
 
 
@@ -42,7 +42,7 @@ def splash():
            " requests this session"
 
 def route_handler():
-    endpoint = request.url_rule.rule
+    endpoint = request.endpoint
     logger.debug("handling request for route: " + endpoint)
     if endpoint not in endpoint_map:
         logger.debug("endpoint not mapped: " + endpoint)
