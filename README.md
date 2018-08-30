@@ -33,7 +33,7 @@ git clone https://github.com/cuteworks/powerline.git
 
 ```
 cd ~/powerline
-python3 -m virtualenv venv
+python3 -m virtualenv venv   # (If you change the name of this directory (from venv) be sure to update powerline.sh)
 source venv/bin/activate
 pip3 install flask
 pip3 install systemd
@@ -93,7 +93,9 @@ reboot:/home/akersten/reboot-server.sh
 ```
 
 After creating or changing any step files:
-* Make sure they are readable by the `cuteworks` user (as well as directories in their path)
+* Make sure they and the scripts they point to are readable by the `cuteworks` user (as well as directories in their path)
+  * I recommend adding the cuteworks user to your user group and leaving the files group-readable and group-executable
+    
 * Restart the powerline service to enumerate the step files and reload the endpoints
 
 ```
