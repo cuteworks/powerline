@@ -13,50 +13,75 @@
 </head>
 <body>
     <div class="main-container">
-        <h1 class="header--main-title --has-text-center">powerline</h1>
-        <h2>Run scripts via HTTP</h2>
+        <div class="header --is-display-flex-on-desktop">
+            <div>
+                <img class="header__pulse --fit-width" src="img/logo-pulse-left.svg" alt="" />
+            </div>
+            <div>
+                <h1 class="header__main-title --has-text-center">powerline</h1>
+            </div>
+            <div>
+                <img class="header__pulse --fit-width" src="img/logo-pulse-right.svg" alt="" />
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="setup-step">
+                <h2 class="--has-text-center">Write your script</h2>
 
-        <h3>Write your script</h3>
-
-        <div class="code">
-            <p class="code__file-name">~/update-repos.sh</p>
-            <pre class="code__pre">
+                <div class="code">
+                    <p class="code__file-name">~/update-repos.sh</p>
+                    <pre class="code__pre">
 #!/bin/bash
 (cd ~/Documents/cool-project && git pull)</pre>
-        </div>
+                </div>
+            </div>
 
-        <h3>Hook up powerline</h3>
+            <div class="setup-step">
+                <h2 class="--has-text-center">Hook up powerline</h2>
 
-        <div class="code">
-            <p class="code__file-name">~/.cuteworks-powerline-steps</p>
-            <pre class="code__pre">
+                <div class="code">
+                    <p class="code__file-name">~/.cuteworks-powerline-steps</p>
+                    <pre class="code__pre">
 update-projects:/home/akersten/update-repos.sh</pre>
+                </div>
+            </div>
+
+
+            <div class="setup-step">
+                <h2 class="--has-text-center">Run your script from the web</h2>
+                <div class="--is-display-flex-on-desktop --has-text-center">
+                    <div>
+                        <h4>Webhooks</h4>
+                        <img class="--is-thumbnail" src="img/example-webhook.png" alt="Example screenshot of a powerline endpoint in the webhook field of a version control system." />
+                    </div>
+                    <div>
+                        <h4>Browser</h4>
+                        <img class="--is-thumbnail" src="img/example-url.png" alt="Example screenshot of a powerline endpoint in the URL bar of a browser." />
+                    </div>
+                    <div>
+                        <h4>Command Line</h4>
+                            <pre>
+    wget &middot;&middot;&middot;/update-projects</pre>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="--has-vertical-space" />
+
+            <div class="setup-step --has-text-center">
+                <h2>Install / Getting Started</h2>
+                <p>
+                    Setup instructions and a getting started guide are in the project readme.
+                </p>
+                <p>
+                    <a class="button" href="https://github.com/cuteworks/powerline">View on GitHub</a>
+                </p>
+            </div>
+
         </div>
-
-
-        <h3>Run your script from the web</h3>
-        <div>
-            <div>
-                <h4>Webhooks</h4>
-            </div>
-            <div>
-                <h4>Browser</h4>
-            </div>
-            <div>
-                <h4>Command Line</h4>
-            </div>
-        </div>
-
-        <h2>Install / Getting Started</h2>
-        <p>
-            Setup instructions and a getting started guide are in the project readme.
-        </p>
-        <p>
-            <a href="https://github.com/cuteworks/powerline">View on GitHub</a>
-        </p>
     </div>
-    <footer>
-        &copy; cuteworks
+    <footer class="--has-text-center --has-vertical-space">
+        &copy; <a href="http://cuteworks.com">cuteworks</a>
     </footer>
 </body>
 </html>

@@ -27,8 +27,8 @@ pre {
 .main-container {
     margin-left: auto;
     margin-right: auto;
-    padding: 1rem;
     margin-top: 2rem;
+
     width: 80%;
 
     overflow: hidden;
@@ -36,6 +36,12 @@ pre {
     background-color: #F6F6F6;
 
     border-radius: 0.5rem;
+
+}
+
+.main-content {
+    padding: 1rem;
+
 }
 
 @media(max-width: 1024px) {
@@ -47,16 +53,45 @@ pre {
     }
 }
 
-.header--main-title {
-    margin-top: 0;
+.header {
+    align-items: center;
 }
+    @media(min-width: 1280px) {
+        .header > div {
+            padding: 0.5rem;
+        }
+
+        .header > div:first-of-type {
+            padding-left: 0;
+            text-align: left;
+        }
+
+        .header > div:last-of-type {
+            padding-right: 0;
+            text-align: right;
+        }
+    }
+
+    .header__main-title {
+        margin: 0;
+    }
+
+    @media(max-width: 1280px) {
+        .header__pulse {
+            max-width: 512px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
 
 
 .code {
     position: relative;
 }
     .code__file-name {
-        position: absolute;
+        position: relative;
         z-index: 1;
 
         display: inline-block;
@@ -73,7 +108,7 @@ pre {
     }
     .code__pre {
         position: relative;
-        top: 1rem;
+        top: -1.75rem;
 
         margin-left: 1rem;
         padding: 1rem;
@@ -85,9 +120,53 @@ pre {
         font-size: 1.25rem;
     }
 
+.button {
+    display: inline-block;
+
+    border: 0.25rem solid #DDD;
+    padding: 1rem;
+
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #444;
+    background-color: #F6F6F6;
+
+    border-radius: 1rem;
+}
+    .button:hover {
+        background-color: #FBFBFB;
+    }
+
 /* Modifiers */
 
 .--has-text-center {
     text-align: center;
 }
 
+.--is-display-flex-on-desktop {
+    display: flex;
+}
+    .--is-display-flex-on-desktop > div {
+        flex-grow: 1;
+    }
+
+@media(max-width: 1280px) {
+    .--is-display-flex-on-desktop {
+        display: inherit;
+    }
+}
+
+.--is-thumbnail {
+    padding: 0.5rem;
+    border: 1px solid #DDD;
+    border-radius: 0.25rem;
+}
+
+.--fit-width {
+    width: 100%;
+}
+
+.--has-vertical-space {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
