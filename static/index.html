@@ -2,12 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>powerline</title>
+    <title>powerline - run scripts via HTTP</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Source+Code+Pro|Source+Sans+Pro" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="css/lib/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/powerline.css" />
 </head>
 <body>
-    <h1>powerline</h1>
+    <div class="main-container">
+        <h1 class="header--title">powerline</h1>
+        <h2>Run scripts via HTTP</h2>
+
+        <h3>Write your script</h3>
+        <p>/home/akersten/update-repos.sh</p>
+
+        <pre class="code">
+#!/bin/bash
+(cd ~akersten/Documents/cool-project && git pull)</pre>
+
+        <h3>Hook up powerline</h3>
+        <p>/home/akersten/.cuteworks-powerline-steps</p>
+
+        <pre class="code">
+update-projects:/home/akersten/update-repos.sh</pre>
+
+        <h3>Run your script from the web</h3>
+        <div>
+            <div>
+                <h4>Webhooks</h4>
+            </div>
+            <div>
+                <h4>Browser</h4>
+            </div>
+            <div>
+                <h4>Command Line</h4>
+            </div>
+        </div>
+
+        <h2>Install / Getting Started</h2>
+        <p>
+            Setup instructions and a getting started guide are in the project readme.
+        </p>
+        <p>
+            <a href="https://github.com/cuteworks/powerline">View on GitHub</a>
+        </p>
+    </div>
+    <footer>
+        &copy; cuteworks
+    </footer>
 </body>
 </html>
