@@ -62,10 +62,12 @@ At this point, the following is set up:
 * The `cuteworks-powerline` service is running and set to start automatically
 * The service is ready to respond to HTTP requests on port 22026
 
-At this point, check to make sure the service is running.
+At this point, check to make sure the service is running, and optionally add the cuteworks user to your user group so it
+can access any scripts you may want to keep in your home directory.
 
 ```
 systemctl status cuteworks-powerline
+sudo gpasswd -a cuteworks {your username}
 ```
 
 The service should be "Active". If not, check the above steps again and make sure the installation directory and application script are accessible by the `cuteworks` user.
