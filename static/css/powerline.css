@@ -18,11 +18,14 @@ h2, h3, h4, h5, h6 {
 
 pre {
     font-family: 'Source Code Pro', monospace;
+    overflow: scroll;
 }
 
 /* Classes */
 
 .main-container {
+    overflow: hidden;
+
     background-color: #F6F6F6;
     margin-left: auto;
     margin-right: auto;
@@ -35,9 +38,10 @@ pre {
 
 @media(max-width: 1024px) {
     .main-container {
-        width: 100%;
+        width: inherit;
         margin-top: 0;
         border-radius: 0;
+
     }
 }
 
