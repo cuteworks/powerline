@@ -6,6 +6,7 @@ html {
 body {
     color: #444;
     background-color: #EEE;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 h1 {
@@ -18,46 +19,75 @@ h2, h3, h4, h5, h6 {
 
 pre {
     font-family: 'Source Code Pro', monospace;
-    overflow: scroll;
+    overflow: auto;
 }
 
 /* Classes */
 
 .main-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    margin-top: 2rem;
+    width: 80%;
+
     overflow: hidden;
 
     background-color: #F6F6F6;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
 
-    padding: 1rem;
-    margin-top: 2rem;
     border-radius: 0.5rem;
 }
 
 @media(max-width: 1024px) {
     .main-container {
-        width: inherit;
         margin-top: 0;
-        border-radius: 0;
+        width: inherit;
 
+        border-radius: 0;
     }
 }
 
-.header--title {
+.header--main-title {
     margin-top: 0;
 }
 
 
 .code {
-    background-color: #444;
-    color: #EEE;
-    font-size: 1.25rem;
-    padding: 1rem;
-    border-left: 1rem solid #DDD;
+    position: relative;
+}
+    .code__file-name {
+        position: absolute;
+        z-index: 1;
+
+        display: inline-block;
+
+        margin: 0;
+        padding: 0.25rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        background-color: #FBFBFB;
+        box-shadow: 0.25rem 0.25rem 0 0 #DDD;
+
+        font-weight: bold;
+    }
+    .code__pre {
+        position: relative;
+        top: 1rem;
+
+        margin-left: 1rem;
+        padding: 1rem;
+
+        border-left: 1rem solid #DDD;
+
+        background-color: #555;
+        color: #EEE;
+        font-size: 1.25rem;
+    }
+
+/* Modifiers */
+
+.--has-text-center {
+    text-align: center;
 }
 
-/*
-    #endregion
- */

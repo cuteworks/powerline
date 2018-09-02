@@ -6,28 +6,33 @@
 
     <title>powerline - run scripts via HTTP</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Audiowide|Source+Code+Pro|Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Source+Code+Pro|Source+Sans+Pro|Source+Serif+Pro" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="css/lib/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/powerline.css" />
 </head>
 <body>
     <div class="main-container">
-        <h1 class="header--title">powerline</h1>
+        <h1 class="header--main-title --has-text-center">powerline</h1>
         <h2>Run scripts via HTTP</h2>
 
         <h3>Write your script</h3>
-        <p>/home/akersten/update-repos.sh</p>
 
-        <pre class="code">
+        <div class="code">
+            <p class="code__file-name">~/update-repos.sh</p>
+            <pre class="code__pre">
 #!/bin/bash
-(cd ~akersten/Documents/cool-project && git pull)</pre>
+(cd ~/Documents/cool-project && git pull)</pre>
+        </div>
 
         <h3>Hook up powerline</h3>
-        <p>/home/akersten/.cuteworks-powerline-steps</p>
 
-        <pre class="code">
+        <div class="code">
+            <p class="code__file-name">~/.cuteworks-powerline-steps</p>
+            <pre class="code__pre">
 update-projects:/home/akersten/update-repos.sh</pre>
+        </div>
+
 
         <h3>Run your script from the web</h3>
         <div>
