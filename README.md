@@ -1,6 +1,8 @@
 # powerline
 *Invoke system commands from web requests.*
 
+## 1.0.0
+
 powerline is a web application that listens for HTTP requests and runs a corresponding script.
 
 ## Use Cases / Motivation
