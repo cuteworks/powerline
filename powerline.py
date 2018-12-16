@@ -49,11 +49,14 @@ def route_handler():
         abort(500)
 
     script = endpoint_map[endpoint]
+
+    if not os.access(script, os.X_OK):
+        abort(500, "script not executable")
+
     logger.debug("executing: " + endpoint + " -> " + script)
 
-    # Assumption: file exists (checked during load). Could probably check whether executable, etc.
     subprocess.call([script])
-    return "Ok"
+    return "executed as " + getpass.getuser()
 
 # ##############
 # Set up logging
